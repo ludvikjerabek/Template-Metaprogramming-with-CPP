@@ -1,14 +1,13 @@
 #include "wrapper.h"
 #include <iostream>
 
-namespace ext
+namespace ext {
+template wrapper<int>;
+
+void f()
 {
-   template wrapper<int>;
+	ext::wrapper<int> a{42};
 
-   void f()
-   {
-      ext::wrapper<int> a{ 42 };
-
-      std::cout << a.data << '\n';
-   }
+	std::cout << a.data << '\n';
+}
 }

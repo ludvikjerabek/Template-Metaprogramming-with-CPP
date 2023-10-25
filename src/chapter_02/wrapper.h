@@ -1,15 +1,13 @@
-#pragma once 
+#pragma once
 
-namespace ext
-{
-   template <typename T>
-   struct wrapper
-   {
-      T data;
-   }; 
+namespace ext {
+template<typename T>
+struct wrapper {
+  T data;
+};
 
-   extern template wrapper<int>;
+extern template wrapper<int>;
 
-   void f();
-   void g();
+void f();
+void g();
 }
