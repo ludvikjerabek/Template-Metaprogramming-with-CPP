@@ -1,2 +1,3 @@
 file(GLOB headers *.h)
-add_executable(chapter_02_b_wrapper main.cpp ${headers})
+get_filename_component(name_of_project "${CMAKE_CURRENT_SOURCE_DIR}" NAME)
+add_executable(${name_of_project} main.cpp ${headers})

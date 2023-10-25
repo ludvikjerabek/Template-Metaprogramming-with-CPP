@@ -9,8 +9,8 @@ T max(T const a, T const b)
 
 int main()
 {
-	max(1, 2);        // OK, compares ints
-	max(1.0, 2.0);    // OK, compares doubles
-	max<int>(1, 2);
-	max<double>(1.0, 2.0);
+	std::cout << max(1, 2) << std::endl;
+	std::cout << max(1.1, 2.2) << std::endl;
+	std::cout << max<int>(1, 2) << std::endl;
+	std::cout << max<double>(1.1, 2.2) << std::endl;
 }
