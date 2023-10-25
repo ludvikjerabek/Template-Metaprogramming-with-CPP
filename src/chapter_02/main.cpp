@@ -9,7 +9,8 @@
 #include <numeric>
 #include <algorithm>
 #include <functional>
-
+#include <memory>
+#include <cstring>
 #include "wrapper.h"
 
 namespace n201 {
@@ -455,17 +456,17 @@ struct wrapper<int>;        // [1]
 template
 struct n226::wrapper<double>;  // [2]
 
-namespace n226 {
-template<typename T>
-T add(T const a, T const b)
-{
-	return a+b;
-}
-
-template int add(int, int);         // [1]
-}
-
-template int n226::add(int, int);       // [2]
+//namespace n226 {
+//template<typename T>
+//T add(T const a, T const b)
+//{
+//	return a+b;
+//}
+//
+//template int add(int, int);         // [1]
+//}
+//
+//template int n226::add(int, int);       // [2]
 
 namespace n227 {
 template<typename T>

@@ -6,7 +6,7 @@ struct wrapper {
   T data;
 };
 
-extern template wrapper<int>;
+extern template struct wrapper<int>;
 
 void f();
 void g();
