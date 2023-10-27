@@ -2,13 +2,6 @@
 #include <numeric>
 #include "wrapper.h"
 
-template<typename T>
-struct foo {
-  static T data;
-};
-
-template<typename T> T foo<T>::data = 0;
-
 int main()
 {
 	wrapper<int> a{0};

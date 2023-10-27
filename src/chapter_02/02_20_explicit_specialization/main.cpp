@@ -8,6 +8,6 @@ int main()
 {
 	[[maybe_unused]] foo<double> a; // OK
 	[[maybe_unused]] foo<int>* b;   // OK
-	//foo<int> c;    // error, foo<int> incomplete type
+	//[[maybe_unused]] foo<int> c;    // error, foo<int> incomplete type
 }
 

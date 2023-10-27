@@ -1,19 +1,3 @@
-#include <iostream>
-#include <array>
-#include <string>
-#include <string_view>
-#include <vector>
-#include <map>
-#include <type_traits>
-#include <array>
-#include <numeric>
-#include <algorithm>
-#include <functional>
-#include <memory>
-#include <cstring>
-
-
-
 namespace n232 {
 template<typename T>
 void func(T a)
@@ -271,14 +255,6 @@ namespace n248 {
 
 int main()
 {
-
-
-	{
-		using namespace n231;
-
-
-	}
-
 	{
 		using namespace n232;
 

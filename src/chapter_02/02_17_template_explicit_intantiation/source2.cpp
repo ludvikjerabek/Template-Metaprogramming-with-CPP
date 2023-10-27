@@ -5,5 +5,5 @@ void g()
 {
 	wrapper<int> a{100};
 
-	std::cout << a.data << '\n';
+	std::cout << a.data << std::endl;
 }
