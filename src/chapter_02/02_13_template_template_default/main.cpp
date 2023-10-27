@@ -18,6 +18,6 @@ int main()
 {
 	foo f1{42, 42.1};
 	std::cout << f1.a << ' '
-			  << f1.b << '\n';
+			  << f1.b << std::endl;
 }
 

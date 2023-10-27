@@ -16,7 +16,7 @@ private:
 template <typename T>
 void use_wrapper(wrapper<T>* ptr)
 {
-	std::cout << ptr->get() << '\n';
+	std::cout << ptr->get() << std::endl;
 }
 
 int main()

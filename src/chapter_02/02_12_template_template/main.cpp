@@ -44,10 +44,10 @@ int main()
 {
 	wrapping_pair<int, double> p1(42, 42.0);
 	std::cout << p1.item1.get() << ' '
-			  << p1.item2.get() << '\n';
+			  << p1.item2.get() << std::endl;
 
 	wrapping_pair<int, double, simple_wrapper> p2(42, 42.0);
 	std::cout << p2.item1.value << ' '
-			  << p2.item2.value << '\n';
+			  << p2.item2.value << std::endl;
 }
 

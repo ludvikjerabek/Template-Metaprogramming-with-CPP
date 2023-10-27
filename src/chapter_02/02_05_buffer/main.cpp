@@ -29,7 +29,7 @@ int main()
 	{
 		buffer<int, 10> b1;
 		b1[0] = 42;
-		std::cout << b1[0] << '\n';
+		std::cout << b1[0] << std::endl;
 		auto b2 = make_buffer<int, 10>();
 	}
 
@@ -37,13 +37,13 @@ int main()
 		buffer<int, 10> b1;
 		buffer<int, 2*5> b2;
 
-		std::cout << std::is_same_v<buffer<int, 10>, buffer<int, 2*5>> << '\n';
-		std::cout << std::is_same_v<decltype(b1), decltype(b2)> << '\n';
+		std::cout << std::is_same_v<buffer<int, 10>, buffer<int, 2*5>> << std::endl;
+		std::cout << std::is_same_v<decltype(b1), decltype(b2)> << std::endl;
 
 		static_assert(std::is_same_v<decltype(b1), decltype(b2)>);
 
 		buffer<int, 3*5> b3;
-		std::cout << std::is_same_v<decltype(b1), decltype(b3)> << '\n';
+		std::cout << std::is_same_v<decltype(b1), decltype(b3)> << std::endl;
 
 		static_assert(!std::is_same_v<decltype(b1), decltype(b3)>);
 	}
