@@ -4,158 +4,6 @@
 #include <string>
 #include <map>
 
-namespace n401 {
-template<typename T>
-struct parser;             // [1] template declaration
-
-void handle(double value)  // [2] handle(double) definition
-{
-	std::cout << "processing a double: " << value << std::endl;
-}
-
-template<typename T>
-struct parser              // [3] template definition
-{
-  void parse()
-  {
-	  handle(42);          // [4] non-dependent name
-  }
-};
-
-void handle(int value)     // [5] handle(int) definition
-{
-	std::cout << "processing an int: " << value << std::endl;
-}
-}
-
-namespace n402 {
-template<typename T>
-struct handler          // [1] template definition
-{
-  void handle(T value)
-  {
-	  std::cout << "handler<T>: " << value << std::endl;
-  }
-};
-
-template<typename T>
-struct parser           // [2] template definition
-{
-  void parse(T arg)
-  {
-	  arg.handle(42);   // [3] dependent name
-  }
-};
-
-template<>
-struct handler<int>     // [4] template specialization
-{
-  void handle(int value)
-  {
-	  std::cout << "handler<int>: " << value << std::endl;
-  }
-};
-}
-
-namespace n403 {
-template<typename T>
-struct base_parser {
-  void init()
-  {
-	  std::cout << "init\n";
-  }
-};
-
-template<typename T>
-struct parser : base_parser<T> {
-  void parse()
-  {
-	  //init();        // error: identifier not found
-	  this->init();
-
-	  std::cout << "parse\n";
-  }
-};
-}
-
-namespace n404 {
-template<typename T>
-struct base_parser {
-  void init()
-  {
-	  std::cout << "init\n";
-  }
-};
-
-template<typename T>
-struct parser : base_parser<T> {
-  void parse()
-  {
-	  this->init();
-
-	  std::cout << "parse\n";
-  }
-};
-
-template<>
-struct base_parser<int> {
-  void init()
-  {
-	  std::cout << "specialized init\n";
-  }
-};
-}
-
-namespace n405 {
-template<typename T>
-struct base_parser {
-  using value_type = T;
-};
-
-template<typename T>
-struct parser : base_parser<T> {
-  void parse()
-  {
-	  //value_type v{}; //syntax error: unexpected token 'identifier', expected ';'
-	  //base_parser<T>::value_type v{};
-	  typename base_parser<T>::value_type v{};
-
-	  std::cout << "parse\n";
-  }
-};
-}
-
-namespace n406 {
-template<typename T>
-struct base_parser {
-  template<typename U>
-  void init()
-  {
-	  std::cout << "init\n";
-  }
-
-  template<typename U>
-  struct token { };
-};
-
-template<typename T>
-struct parser : base_parser<T> {
-  void parse()
-  {
-	  //base_parser<T>::init<int>(); // error
-
-	  base_parser<T>::template init<int>();
-
-	  using token_type = base_parser<T>::template token<int>;
-	  token_type t1{};
-
-	  typename base_parser<T>::template token<int> t2{};
-
-	  std::cout << "parse\n";
-  }
-};
-}
-
 namespace n407 {
 template<typename T>
 struct parser {
@@ -993,24 +841,6 @@ struct executor {
 };
 }
 
-namespace n446 {
-struct dictionary_traits {
-  using key_type = int;
-  using map_type = std::map<key_type, std::string>;
-  static constexpr int identity = 1;
-};
-
-template<typename T>
-struct dictionary : T::map_type {
-  int start_key{T::identity};
-  T::key_type next_key;
-
-  using value_type = T::map_type::mapped_type;
-
-  void add(T::key_type const&, value_type const&) { }
-};
-}
-
 namespace std {
 template<typename T>
 pair(T&&, char const*) -> pair<T, std::string>;
@@ -1024,25 +854,8 @@ pair(char const*, char const*) -> pair<std::string, std::string>;
 int main()
 {
 	{
-		using namespace n401;
-
-		parser<int> p;       // [6] template instantiation
-		p.parse();
-	}
-
-	{
-		using namespace n402;
-
-		handler<int> h;         // [5] template instantiation
-		parser<handler<int>> p; // [6] template instantiation
-		p.parse(h);
-	}
-
-	{
 		using namespace n403;
 
-		parser<int> p;
-		p.parse();
 	}
 
 	{
@@ -1058,22 +871,16 @@ int main()
 	{
 		using namespace n405;
 
-		parser<int> p;
-		p.parse();
 	}
 
 	{
 		using namespace n406;
 
-		parser<int> p;
-		p.parse();
 	}
 
 	{
 		using namespace n407;
 
-		[[maybe_unused]]
-		parser<int> p;
 	}
 
 	{
@@ -1677,11 +1484,5 @@ int main()
 
 		executor e;
 		e.run();
-	}
-
-	{
-		using namespace n446;
-		dictionary<dictionary_traits> d;
-		d.add(1, "2");
 	}
 }
