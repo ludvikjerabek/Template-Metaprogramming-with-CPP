@@ -1,5 +1,8 @@
 # Template Metaprogramming with C++ with GCC/Clang fixed
 
+####  Fixed Example Code
+Chapter 1, Chapter 2, and Chapter 3 have been divided in the order shown in the book. They now compile against GCC and CLANG. 
+
 <a href="https://www.amazon.com/Template-Metaprogramming-everything-templates-metaprogramming/dp/1803243457?utm_source=github&utm_medium=repository&utm_campaign=9781801076012"><img src="https://images-na.ssl-images-amazon.com/images/I/41X9zP2asoL._SX258_BO1,204,203,200_.jpg" alt="Template Metaprogramming with C++ " height="256px" align="right"></a>
 
 This is the code repository for [Template Metaprogramming with C++ ](https://www.amazon.com/Template-Metaprogramming-everything-templates-metaprogramming/dp/1803243457?utm_source=github&utm_medium=repository&utm_campaign=9781801076012), published by Packt.
