@@ -887,9 +887,9 @@ template<typename TL>
 constexpr std::size_t length_v = length_t<TL>::value;
 
 static_assert(length_t<typelist<int, double, char>>::value==3);
-static_assert(length_v<typelist<int, double, char>>==3);
-static_assert(length_v<typelist<int, double>>==2);
-static_assert(length_v<typelist<int>>==1);
+static_assert(length_v<typelist<int, double, char >>==3);
+static_assert(length_v<typelist<int, double >>==2);
+static_assert(length_v<typelist<int >>==1);
 
 template<typename TL>
 using front_t = typename detail::front_type<TL>::type;

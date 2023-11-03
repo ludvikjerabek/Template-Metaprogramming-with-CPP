@@ -1,7 +1,8 @@
 #include "wrapper.h"
 #include <iostream>
 
-template struct wrapper<int>;
+template
+struct wrapper<int>;
 
 void f()
 {

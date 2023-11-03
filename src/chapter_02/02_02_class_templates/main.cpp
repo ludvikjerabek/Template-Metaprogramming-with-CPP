@@ -13,7 +13,7 @@ private:
 	T value;
 };
 
-template <typename T>
+template<typename T>
 void use_wrapper(wrapper<T>* ptr)
 {
 	std::cout << ptr->get() << std::endl;

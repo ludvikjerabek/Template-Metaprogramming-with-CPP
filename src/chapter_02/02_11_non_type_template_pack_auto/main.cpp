@@ -3,7 +3,7 @@
 #include <memory>
 
 template<auto... x>
-struct foo {};
+struct foo { };
 
 int main()
 {

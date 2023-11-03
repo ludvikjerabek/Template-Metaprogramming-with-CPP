@@ -22,9 +22,9 @@ public:
 int main()
 {
 	composition_t<int> ct;
-	std::cout << ct.add(41,21) << std::endl;
+	std::cout << ct.add(41, 21) << std::endl;
 
 	composition c;
-	std::cout << c.add<int>(41,21) << std::endl;
+	std::cout << c.add<int>(41, 21) << std::endl;
 }
 

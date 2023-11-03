@@ -88,23 +88,6 @@ struct foo<A, A> { };
 //struct foo<A, A + 1> {}; // error
 }
 
-namespace n237 {
-template<typename T, size_t S>
-std::ostream& pretty_print(std::ostream& os, std::array<T, S> const& arr)
-{
-	os << '[';
-	if (S>0) {
-		size_t i = 0;
-		for (; i<S-1; ++i)
-			os << arr[i] << ',';
-		os << arr[S-1];
-	}
-	os << ']';
-
-	return os;
-}
-}
-
 namespace n238 {
 template<size_t S>
 std::ostream& pretty_print(std::ostream& os, std::array<char, S> const& arr)
@@ -287,29 +270,6 @@ int main()
 	}
 
 	{
-		using namespace n235;
-
-		collection<char, 42>{}();  // primary template
-		collection<int, 42>{}();   // partial specialization <int, S>
-		collection<char, 10>{}();  // partial specialization <T, 10>
-		collection<int*, 20>{}();  // partial specialization <T*, S>
-
-		//collection<int, 10>{}();      // error: collection<T,10> or collection<int,S>
-		//collection<char*, 10>{}();    // error: collection<T,10> or collection<T*,S>
-	}
-
-	{
-		using namespace n237;
-
-		std::array<int, 9> arr{1, 1, 2, 3, 5, 8, 13, 21};
-		pretty_print(std::cout, arr);
-
-		std::array<char, 9> str;
-		std::strcpy(str.data(), "template");
-		pretty_print(std::cout, str);
-	}
-
-	{
 		using namespace n238;
 
 		std::array<char, 9> str;
@@ -367,7 +327,7 @@ int main()
 	{
 		using namespace n247;
 		static_assert(std::is_same_v<list_t<int, 1>, int>);
-		static_assert(std::is_same_v<list_t<int, 2>, std::vector<int>>);
+		static_assert(std::is_same_v<list_t<int, 2>, std::vector<int >> );
 	}
 
 	{

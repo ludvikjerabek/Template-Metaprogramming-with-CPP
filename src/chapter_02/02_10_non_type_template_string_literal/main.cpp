@@ -13,7 +13,7 @@ struct string_literal {
 };
 
 template<string_literal x>
-struct foo {};
+struct foo { };
 
 int main()
 {
