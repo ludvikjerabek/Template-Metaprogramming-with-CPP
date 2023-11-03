@@ -10,7 +10,7 @@ struct parser;             // [1] template declaration
 
 void handle(double value)  // [2] handle(double) definition
 {
-	std::cout << "processing a double: " << value << '\n';
+	std::cout << "processing a double: " << value << std::endl;
 }
 
 template<typename T>
@@ -24,7 +24,7 @@ struct parser              // [3] template definition
 
 void handle(int value)     // [5] handle(int) definition
 {
-	std::cout << "processing an int: " << value << '\n';
+	std::cout << "processing an int: " << value << std::endl;
 }
 }
 
@@ -34,7 +34,7 @@ struct handler          // [1] template definition
 {
   void handle(T value)
   {
-	  std::cout << "handler<T>: " << value << '\n';
+	  std::cout << "handler<T>: " << value << std::endl;
   }
 };
 
@@ -52,7 +52,7 @@ struct handler<int>     // [4] template specialization
 {
   void handle(int value)
   {
-	  std::cout << "handler<int>: " << value << '\n';
+	  std::cout << "handler<int>: " << value << std::endl;
   }
 };
 }
@@ -243,7 +243,7 @@ namespace n412 {
 template<typename T>
 void process(T arg)
 {
-	std::cout << "processing " << arg << '\n';
+	std::cout << "processing " << arg << std::endl;
 }
 
 struct account_t {
@@ -275,49 +275,49 @@ struct balance_t {
 };
 
 template<typename T>
-void process01(T) { std::cout << "T" << '\n'; }
+void process01(T) { std::cout << "T" << std::endl; }
 
 template<typename T>
-void process02(T const) { std::cout << "T const" << '\n'; }
+void process02(T const) { std::cout << "T const" << std::endl; }
 
 template<typename T>
-void process03(T volatile) { std::cout << "T volatile" << '\n'; }
+void process03(T volatile) { std::cout << "T volatile" << std::endl; }
 
 template<typename T>
-void process04(T*) { std::cout << "T*" << '\n'; }
+void process04(T*) { std::cout << "T*" << std::endl; }
 
 template<typename T>
-void process04(T&) { std::cout << "T&" << '\n'; }
+void process04(T&) { std::cout << "T&" << std::endl; }
 
 template<typename T>
-void process05(T&&) { std::cout << "T&&" << '\n'; }
+void process05(T&&) { std::cout << "T&&" << std::endl; }
 
 template<typename T>
-void process06(T[5]) { std::cout << "T[5]" << '\n'; }
+void process06(T[5]) { std::cout << "T[5]" << std::endl; }
 
 template<size_t n>
-void process07(account_t[5][n]) { std::cout << "C[5][n]" << '\n'; }
+void process07(account_t[5][n]) { std::cout << "C[5][n]" << std::endl; }
 
 template<typename T>
-void process08(T(*)()) { std::cout << "T (*)()" << '\n'; }
+void process08(T(*)()) { std::cout << "T (*)()" << std::endl; }
 
 template<typename T>
-void process08(account_t(*)(T)) { std::cout << "C (*)(T)" << '\n'; }
+void process08(account_t(*)(T)) { std::cout << "C (*)(T)" << std::endl; }
 
 template<typename T, typename U>
-void process08(T(*)(U)) { std::cout << "T (*)(U)" << '\n'; }
+void process08(T(*)(U)) { std::cout << "T (*)(U)" << std::endl; }
 
 template<typename T>
-void process09(T(account_t::*)()) { std::cout << "T (C::*)()" << '\n'; }
+void process09(T(account_t::*)()) { std::cout << "T (C::*)()" << std::endl; }
 
 template<typename T, typename U>
-void process09(T(account_t::*)(U)) { std::cout << "T (C::*)(U)" << '\n'; }
+void process09(T(account_t::*)(U)) { std::cout << "T (C::*)(U)" << std::endl; }
 
 template<typename T, typename U>
-void process09(T(U::*)()) { std::cout << "T (U::*)()" << '\n'; }
+void process09(T(U::*)()) { std::cout << "T (U::*)()" << std::endl; }
 
 template<typename T, typename U, typename V>
-void process09(T(U::*)(V)) { std::cout << "T (U::*)(V)" << '\n'; }
+void process09(T(U::*)(V)) { std::cout << "T (U::*)(V)" << std::endl; }
 
 template<typename T>
 void process09(account_t(T::*)()) { std::cout << "C (T::*)()" << '\n'; }
