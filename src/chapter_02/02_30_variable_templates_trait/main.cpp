@@ -15,26 +15,22 @@ T sphere_volume(T const r)
 }
 
 template<typename T>
-struct is_floating_point
-{
+struct is_floating_point {
   constexpr static bool value = false;
 };
 
 template<>
-struct is_floating_point<float>
-{
+struct is_floating_point<float> {
   constexpr static bool value = true;
 };
 
 template<>
-struct is_floating_point<double>
-{
+struct is_floating_point<double> {
   constexpr static bool value = true;
 };
 
 template<>
-struct is_floating_point<long double>
-{
+struct is_floating_point<long double> {
   constexpr static bool value = true;
 };
 

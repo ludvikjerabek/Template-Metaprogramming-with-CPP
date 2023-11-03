@@ -7,8 +7,8 @@ int my_function(int a, char b)
 	return 100;
 }
 
-template <typename T>
-struct foo{
+template<typename T>
+struct foo {
   using value_type = T;
 };
 
@@ -21,9 +21,9 @@ int main()
 
 		index_t a = 100;
 		NameValueList list;
-		list.push_back(std::pair<int, std::string>({100,"Hello"}));
+		list.push_back(std::pair<int, std::string>({100, "Hello"}));
 		fn_ptr f1 = my_function;
-		f1(a,'A');
+		f1(a, 'A');
 	}
 
 	{
@@ -33,14 +33,14 @@ int main()
 
 		index_t a = 101;
 		NameValueList list;
-		list.push_back({100,"Hello"});
+		list.push_back({100, "Hello"});
 		fn_ptr* f1 = my_function;
-		f1(a,'B');
+		f1(a, 'B');
 	}
 
 	{
 		foo<int>::value_type a = 102;
-		my_function(a,'C');
+		my_function(a, 'C');
 	}
 
 }

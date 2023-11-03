@@ -45,7 +45,7 @@ int main()
 
 	std::vector<int> v;
 	push_back_many(v, 1, 2, 3, 4, 5);
-	for( auto a : v)
+	for (auto a : v)
 		std::cout << a << std::endl;
 }
 

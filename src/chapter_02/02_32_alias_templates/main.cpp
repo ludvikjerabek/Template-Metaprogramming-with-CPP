@@ -15,7 +15,6 @@ struct list<T, 1> {
 template<typename T, size_t S>
 using list_t = typename list<T, S>::type;
 
-
 template<typename T>
 using customer_addresses_t = std::map<int, std::vector<T>>;
 
