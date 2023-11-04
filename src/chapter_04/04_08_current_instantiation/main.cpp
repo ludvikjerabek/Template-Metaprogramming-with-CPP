@@ -12,9 +12,15 @@ struct parser {
 	parser<T>::token* t2;   // parser<T>::token is the CI
 	//typename parser<T*>::token* t3; // parser<T*>::token is not the CI
   };
+};
 
-  int main()
-  {
-	  [[maybe_unused]] parser<int> p;
-  }
+template<typename T>
+struct parser<T*> {
+  parser<T*>* p1;   // parser<T*> is the CI
+  parser<T>* p2;   // parser<T> is not the CI
+};
 
+int main()
+{
+	[[maybe_unused]] parser<int> p;
+}
