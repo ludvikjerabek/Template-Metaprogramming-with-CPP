@@ -8,7 +8,7 @@ struct ncube {
 template<size_t N>
 void process(ncube<N-1> cube)
 {
-	std::cout << cube.dimensions << '\n';
+	std::cout << "Cube Dimensions: " << cube.dimensions << std::endl;
 }
 
 int main()

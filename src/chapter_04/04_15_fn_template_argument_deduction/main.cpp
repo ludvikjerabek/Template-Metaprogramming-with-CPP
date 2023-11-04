@@ -3,7 +3,7 @@
 template<typename T>
 void process(T a = 0, T b = 42)
 {
-	std::cout << a << "," << b << '\n';
+	std::cout << a << "," << b << std::endl;
 }
 
 int main()
