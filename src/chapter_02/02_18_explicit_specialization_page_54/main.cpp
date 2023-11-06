@@ -33,7 +33,7 @@ int main()
 		std::cout << is_floating_point<long double>::value << std::endl;
 		std::cout << is_floating_point<std::string>::value << std::endl;
 	}
-
+	// Ease of use since :: is a pain
 	{
 		std::cout << is_floating_point_v<int> << std::endl;
 		std::cout << is_floating_point_v<float> << std::endl;

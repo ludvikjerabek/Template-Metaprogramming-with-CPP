@@ -28,13 +28,6 @@ int main()
 {
 	{
 		buffer<int, 10> b1;
-		b1[0] = 42;
-		std::cout << b1[0] << std::endl;
-		auto b2 = make_buffer<int, 10>();
-	}
-
-	{
-		buffer<int, 10> b1;
 		buffer<int, 2*5> b2;
 
 		std::cout << std::is_same_v<buffer<int, 10>, buffer<int, 2*5>> << std::endl;
@@ -46,6 +39,13 @@ int main()
 		std::cout << std::is_same_v<decltype(b1), decltype(b3)> << std::endl;
 
 		static_assert(!std::is_same_v<decltype(b1), decltype(b3)>);
+	}
+	// Note the other samples were missing from the source, the following was part of the original.
+	{
+		buffer<int, 10> b1;
+		b1[0] = 42;
+		std::cout << b1[0] << std::endl;
+		auto b2 = make_buffer<int, 10>();
 	}
 }
 

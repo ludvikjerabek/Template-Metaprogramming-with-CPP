@@ -1,6 +1,7 @@
 #include <iostream>
 #include <numeric>
 #include <memory>
+// This sample was in the original source but not in the book
 
 struct device {
   virtual void output() = 0;
