@@ -1,7 +1,7 @@
 #include <iostream>
 
 template<typename T>
-struct parser;             // [1] template declaration
+struct parser;             // [1] template declaration (book has processor not parser)
 
 void handle(double value)  // [2] handle(double) definition
 {

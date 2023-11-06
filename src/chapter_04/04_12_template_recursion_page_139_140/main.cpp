@@ -1,10 +1,5 @@
 #include <iostream>
 
-constexpr unsigned int factorial(unsigned int const n)
-{
-	return n>1 ? n*factorial(n-1) : 1;
-}
-
 template<typename T>
 struct wrapper { };
 
@@ -20,13 +15,6 @@ struct manyfold_wrapper<0> {
 
 int main()
 {
-	std::cout << factorial(0) << std::endl;
-	std::cout << factorial(1) << std::endl;
-	std::cout << factorial(2) << std::endl;
-	std::cout << factorial(3) << std::endl;
-	std::cout << factorial(4) << std::endl;
-	std::cout << factorial(5) << std::endl;
-
 	std::cout << typeid(manyfold_wrapper<0>::value_type).name() << std::endl;
 	std::cout << typeid(manyfold_wrapper<1>::value_type).name() << std::endl;
 	std::cout << typeid(manyfold_wrapper<2>::value_type).name() << std::endl;

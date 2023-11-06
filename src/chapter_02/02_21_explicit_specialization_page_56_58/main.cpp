@@ -17,17 +17,17 @@ void func(foo<int>)
 }
 
 // Page 57 - 58
-template <typename T, typename U>
+template<typename T, typename U>
 void func(T a, U b)
 {
 	std::cout << "primary template" << std::endl;
 }
-template <>
+template<>
 void func(int a, int b)
 {
 	std::cout << "int-int specialization" << std::endl;
 }
-template <>
+template<>
 void func(int a, double b)
 {
 	std::cout << "int-double specialization" << std::endl;

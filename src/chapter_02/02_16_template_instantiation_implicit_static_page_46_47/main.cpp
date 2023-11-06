@@ -2,13 +2,11 @@
 #include <numeric>
 
 // Struct control, code was never used page 46
-template <typename T>
-struct control
-{
+template<typename T>
+struct control {
 };
-template <typename T>
-struct button : public control<T>
-{
+template<typename T>
+struct button : public control<T> {
 };
 void show(button<int>* ptr)
 {
@@ -22,8 +20,6 @@ struct foo {
 };
 
 template<typename T> T foo<T>::data = 0;
-
-
 
 int main()
 {
