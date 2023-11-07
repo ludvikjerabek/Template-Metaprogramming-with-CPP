@@ -33,6 +33,7 @@ alt="https://www.packtpub.com/" border="5" /></a>
 
 ## Errata
 
+* Page 122: The line of code ``struct processor`` should be ``struct parser``
 * Page 258: The line of code ``return value--;`` must be read as ``return value-1;`` or ``return --value;``
 
 ## Instructions and Navigations
