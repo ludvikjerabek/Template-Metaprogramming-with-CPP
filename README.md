@@ -1,10 +1,15 @@
 # Template Metaprogramming with C++ with GCC/Clang fixed
 
 ####  Fixed Example Code
-Chapter 1
-Chapter 2
-Chapter 3
-Chapter 4 - Almost Completed
+Chapter 1 - Completed  
+Chapter 2 - Completed  
+Chapter 3 - Completed  
+Chapter 4 - Completed  
+Chapter 5 - In Progress  
+Chapter 6 - In Progress  
+Chapter 7 - In Progress  
+Chapter 8 - In Progress  
+Chapter 9 - In Progress  
 
 Every chapter is broken down into sections showing page numbers. If there was sample code that is not in book, it's marked nib instead of page number or range.
 
