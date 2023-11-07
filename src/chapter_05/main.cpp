@@ -414,7 +414,6 @@ int main()
 {
 	{
 		using namespace n501;
-
 		static_assert(is_floating_point<float>::value);
 		static_assert(is_floating_point<double>::value);
 		static_assert(is_floating_point<long double>::value);
